@@ -2,9 +2,13 @@ def my_select(collection)
   selection = []
 i = 0 
 while i < collection.length 
-selection << yield (collection[i])
-i = i + 1
+if yield (collection[i])
+  selection << collection[i]
+end
+i += 1
 end 
-selection
+return selection
 end
 end
+
+
